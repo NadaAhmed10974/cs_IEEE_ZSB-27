@@ -2,44 +2,14 @@
 using namespace std;
 
 int main() {
-    int n;
+    int n, count = 0;
     cin >> n;
-
-    long long sum = 1LL * n * (n + 1) / 2;
-
-    if (sum % 2 == 1) {
-        cout << "NO";
-        return 0;
+    for (int i = 0; i < n; i++) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        if (a + b + c >= 2)
+            count++;
     }
-
-    int a[1000000], b[1000000];
-    int x = 0, y = 0;
-    long long s = 0;
-
-    for (int i = n; i >= 1; i--) {
-        if (s + i <= sum / 2) {
-            a[x] = i;
-            x++;
-            s += i;
-        }
-        else {
-            b[y] = i;
-            y++;
-        }
-    }
-
-    cout << "YES" << endl;
-
-    cout << x << endl;
-    for (int i = 0; i < x; i++) {
-        cout << a[i] << " ";
-    }
-
-    cout << endl << y << endl;
-
-    for (int i = 0; i < y; i++) {
-        cout << b[i] << " ";
-    }
-
+    cout << count;
     return 0;
 }

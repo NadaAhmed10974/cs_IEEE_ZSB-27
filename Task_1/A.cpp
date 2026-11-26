@@ -1,25 +1,12 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int main() {
-    string s;
-    cin >> s;
-
-    int cnt = 1, mx = 1;
-
-    for (int i = 1; i < s.size(); i++) {
-        if (s[i] == s[i - 1]) {
-            cnt++;
-        }
-        else {
-            cnt = 1;
-        }
-
-        mx = max(mx, cnt);
-    }
-
-    cout << mx << endl;
-
+    int w;
+    cin >> w;
+    if (w % 2 == 0 && w > 2)
+        cout << "YES";
+    else
+        cout << "NO";
     return 0;
 }

@@ -1,20 +1,20 @@
 #include <iostream>
-#include <set>
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
-
-    set<int> s;
-
-    for (int i = 0; i < n; i++) {
-        int x;
-        cin >> x;
-        s.insert(x);
+    int t;
+    cin >> t;
+    while (t--) {
+        int rating;
+        cin >> rating;
+        if (rating >= 1900)
+            cout << "Division 1\n";
+        else if (rating >= 1600)
+            cout << "Division 2\n";
+        else if (rating >= 1400)
+            cout << "Division 3\n";
+        else
+            cout << "Division 4\n";
     }
-
-    cout << s.size();
-
     return 0;
 }
